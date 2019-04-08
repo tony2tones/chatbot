@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+    position: relative;
+    padding-top: 150px;
+}
+
+.contains {
+    position: absolute;
+    top: 50%;
+    left:40%;
+}
+
 .message {
     border-radius: 50px;
     margin: 0 15px 10px;
