@@ -12,17 +12,11 @@
         {{ message.content }}
       </div>
     </ng-container>
-    <form [formGroup]="form">
-      <div class="form-group">
-        <label for="nameField">Your Message</label>
-        <input
-          formControlName="messageInput"
-          (keyup.enter)="sendMessage()"
-          type="text"
-        />
-        <button (click)="sendMessage()">Send</button>
-      </div>
-      <div *ngIf="messageInput.touched && messageInput.invalid" >Please enter something</div>
-    </form>
+
+    <label for="nameField">Your Message</label>
+
+    <input [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" />
+
+    <button (click)="sendMessage()">Send</button>
   </div>
 </div>
