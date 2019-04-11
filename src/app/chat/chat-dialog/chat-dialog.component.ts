@@ -11,7 +11,7 @@ import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_di
   styleUrls: ['./chat-dialog.component.css']
 })
 export class ChatDialogComponent implements OnInit {
-
+  title = 'Angular Bot';
   messages: Observable<Message[]>;
   formValue: string;
 
