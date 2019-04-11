@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ChatService, Message } from '../chat.service';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/scan'; 
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { formArrayNameProvider } from '@angular/forms/src/directives/reactive_directives/form_group_name';
+import { ReactiveFormsModule, FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import {  } from '@angular/forms'
 
 @Component({
   selector: 'chat-dialog',
@@ -15,7 +15,7 @@ export class ChatDialogComponent implements OnInit {
   messages: Observable<Message[]>;
   formValue: string;
 
-  constructor(public chat: ChatService) { }
+  constructor(public chat: ChatService,private fb: FormBuilder) { }
 
   ngOnInit() {
     this.messages = this.chat.conversation.asObservable()
@@ -27,8 +27,8 @@ export class ChatDialogComponent implements OnInit {
     this.formValue = '';
   }
 
-  form = new FormGroup({
-     messageInput: new FormControl('',Validators.required)
+  form = this.fb.group ({
+     messageInput: ['', Validators.required]
   });
 
   get messageInput() {
