@@ -25,7 +25,6 @@ export class ChatDialogComponent implements OnInit {
   sendMessage() {
     let value = this.formValue;
     if (value === undefined || value === '') {
-      console.log('this is blooody empty ');
     } else {   
       this.chat.converse(value);
       this.formValue = "";
